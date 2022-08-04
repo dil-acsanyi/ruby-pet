@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @username = current_user.name
   end
   
 end
