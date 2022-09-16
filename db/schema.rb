@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_08_02_074941) do
     t.string "twitter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
@@ -41,4 +41,5 @@ ActiveRecord::Schema.define(version: 2022_08_02_074941) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "friends", "users"
 end

@@ -3,11 +3,7 @@ class HomeController < ApplicationController
   end
 
   def about
-    if current_user != nil
-      @username = current_user.name
-    else
-      @username = "new visitor"
-    end
+      @username = current_user.nil? ? "New visitor" : current_user.name
   end
   
 end
